@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE=victuna_docker_sample
+IMAGE=vicuna_docker_sample
 TAG=latest
 
 if type "docker buildx" > /dev/null 2>&1; then

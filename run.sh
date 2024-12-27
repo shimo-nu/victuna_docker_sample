@@ -1,8 +1,8 @@
 #!/bin/bash
 
-IMAGE=victuna_docker_sample
+IMAGE=vicuna_docker_sample
 TAG=latest
-CONTAINER=victuna_container
+CONTAINER=vicuna_container
 
 HOSTPATH=$PWD
 
