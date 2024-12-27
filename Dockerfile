@@ -65,7 +65,7 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN python3 -m pip install --upgrade pip 
 RUN python3 -m pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
-RUN python3 -m pip install transformers sentencepiece accelerate bitsandbytes protobuf
+RUN python3 -m pip install rich transformers sentencepiece accelerate bitsandbytes protobuf
 
 # Source ROS 2 setup script
 SHELL ["/bin/bash", "-c"]
