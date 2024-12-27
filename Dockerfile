@@ -61,6 +61,12 @@ RUN apt-get update && apt-get install -y \
     python3-colcon-common-extensions \
     && rm -rf /var/lib/apt/lists/*
 
+# Intall requirements
+COPY requirements.txt .
+RUN python3 -m pip install --upgrade pip 
+RUN python3 -m pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
+RUN python3 -m pip install transformers sentencepiece accelerate bitsandbytes protobuf
+
 # Source ROS 2 setup script
 SHELL ["/bin/bash", "-c"]
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
@@ -68,7 +74,6 @@ RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
 # Install additional ROS 2 tools
 RUN apt-get update && apt-get install -y \
     ros-${ROS_DISTRO}-ros-base \
-    ros-${ROS_DISTRO}-ros2controlcli \
     && rm -rf /var/lib/apt/lists/*
 
 
