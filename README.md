@@ -1,4 +1,4 @@
-# Victuna Sample
+# Vicuna Sample on Docker
 
 
 ## Requirements
